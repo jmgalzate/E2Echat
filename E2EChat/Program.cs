@@ -13,24 +13,24 @@ var username = Console.ReadLine();
 
 Console.WriteLine("Bienvenido {0}.", username);
 
-Console.WriteLine("Esta es tu clave pública para que la compartas con tus amigos: {0}", message.PublicKey);
-Console.Write("Presione enter para continuar...(Se limpiará la pantalla)");
+Console.WriteLine("Esta es tu clave pública para que la compartas con tus amigos: \n\n{0}\n\n", message.PublicKey);
+Console.Write("Luego de copiar y enviar la clave a su amigo, presione enter para continuar ...");
 Console.ReadKey();
 
 Console.Clear();
 
 Console.WriteLine("Iniciando el chat ... ");
-Console.WriteLine("Para salir del chat en cualquier momento, escriba 'exit'.");
 Console.WriteLine("************************************");
 
 var receiverPublicKey = string.Empty;
 
-while(!string.IsNullOrEmpty(receiverPublicKey))
+while(string.IsNullOrEmpty(receiverPublicKey))
 {
     Console.WriteLine("Ingrese la clave pública del destinatario: ");
     receiverPublicKey = Console.ReadLine();
 }
 
+Console.Clear();
 Boolean exit = false;
 
 while (exit == false)
